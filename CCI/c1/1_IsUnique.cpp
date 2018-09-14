@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-#include <unordered_map>
+#include <bitset>
 #include <algorithm>
 using namespace std;
 
@@ -15,12 +15,11 @@ using namespace std;
 	Space: O(1) -- with extra space
 */
 bool isUnique(string str) {
-	unordered_map<char,int> charac; // Hash table -- extra space
+	bitset<256> charac; // Bitset with only zeros -- extra space
 
 	for(int i = 0; i < str.size(); i++) {
-		if( charac.find( str[i] ) == charac.end() )
-			charac[ str[i] ] = 1;
-		else return false;
+		if( charac[ str[i] ] ) return false; 
+		else charac[ str[i] ] = 1;
 	}
 	return true;
 }
