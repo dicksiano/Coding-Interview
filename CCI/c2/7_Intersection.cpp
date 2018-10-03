@@ -7,6 +7,10 @@ int sizeLinkedList(node *head) {
 	return size;
 }
 
+/* 
+	Time: O(n + m)
+	Space: O(1)
+*/
 node *intersection(node *x, node *y) {
 	int sizeX = sizeLinkedList(x), sizeY = sizeLinkedList(y);
 	for(int diff = sizeX - sizeY; diff > 0; diff--, x = x->next);
