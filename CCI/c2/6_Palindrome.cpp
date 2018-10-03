@@ -66,8 +66,8 @@ bool isPalindromeInPlace(node *head) {
 
 	newHead = p->next;
 	reverseLinkedList(&newHead);
-	
-	for(i = 0, q = head, r = newHead; i < size/2; i++, q = q->next, r = r->next)
+	// 	DO NOT use compareLinkedList(), since the two halves could have different sizes
+	for(i = 0, q = head, r = newHead; i < size/2; i++, q = q->next, r = r->next) 
 		if(q->elem  != r->elem) res = 0;
 	
 	reverseLinkedList(&newHead);
