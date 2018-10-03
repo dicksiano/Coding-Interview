@@ -30,21 +30,21 @@ void readMatrix(int &n, int mtx[][MAX]) {
 			cin >> mtx[i][j];	
 }
 
+void printMatrix(int n, int mtx[][MAX]) {
+	for (int i = 0; i < n; ++i) { 
+		for (int j = 0; j < n; ++j)
+			cout << mtx[i][j];
+		cout << endl;
+	}
+}
+
 int main() {
 	int n, mtx[MAX][MAX];
 
 	while(1) {
 		readMatrix(n, mtx);
-
-		// In place!
-		rotateMatrix(mtx,n);
-
-		for (int i = 0; i < n; ++i) { 
-			for (int j = 0; j < n; ++j)
-				cout << mtx[i][j];
-			cout << endl;
-		}
-
+		rotateMatrix(mtx,n); // In place!
+		printMatrix(n, mtx);
 	}
 	return 0;
 }
