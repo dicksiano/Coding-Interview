@@ -52,5 +52,25 @@ int main() {
 	printList(z);	
 	cout << ( (intersection(y,z) == NULL) ? 0 : intersection(x,y)->elem ) << endl << endl;
 	
+
+	node *a = new node(10);
+	pointer = a;
+
+	pointer->next = new node(9); pointer = pointer->next;
+	pointer->next = new node(8); pointer = pointer->next;
+	pointer->next = new node(7); pointer = pointer->next;
+	pointer->next = new node(6);
+
+	node *b = new node(1);
+	pointer = b;
+
+	pointer->next = new node(2); pointer = pointer->next;
+	pointer->next = new node(3); pointer = pointer->next;
+	pointer->next = new node(4); pointer = pointer->next;
+	pointer->next = new node(5);
+
+	printList(a);
+	printList(b);	
+	cout << ( (intersection(a,b) == NULL) ? 0 : intersection(x,y)->elem ) << endl << endl;
 	return 0;
 }
