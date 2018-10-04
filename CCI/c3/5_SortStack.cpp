@@ -3,6 +3,9 @@
 using namespace std;
 
 /*
+	Time: O(n²)
+	Space: O(n) - aux queue
+
 	Pop all elements that are bigger than the current one.
 	In the end, put all elements from the aux stack in the principal stack.
 */
