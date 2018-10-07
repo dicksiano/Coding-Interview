@@ -55,7 +55,24 @@ int firstCommonAncestor1(node *p, node *q) {
   Solution with no extra pointers, but if pointer to root
 
   Time: O(n)
-  Space: O(log n) - recursion stack
+  Space: O(n) - recursion stack
+              - Tree could be not balances. Worst case: n
+
+              Worst case:
+                          root
+                              \ 
+                               a
+                                \
+                                 b
+                                  \
+                                  ...
+                                    \
+                                     p 
+                                      \ 
+                                       q
+                                        \
+                                        NULL
+
 */
 
 node *firstCommonAncestor2(node *root, node *p, node *q) {

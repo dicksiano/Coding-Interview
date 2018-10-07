@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 #include "tree.h"
 
+/* 
+  Time: O(n)
+  Space: O(log n) - recursion stack
+                  - tree is always balanced
+*/
 node *mt(std::vector<int> v, int s, int e) {
   if(e < s || s < 0 || e >= v.size()) return NULL;
   if(e == s) return new node(v[s]);

@@ -4,7 +4,8 @@ using namespace std;
 
 /*
   Time: O(n)
-  Space: O(log n) - recursion stack
+  Space: O(n) - recursion stack
+              - Tree could be not balanced. Worst case: n
 */
 pair<bool, int> isBalanced(node *root) {
   if(root == NULL) return make_pair(true,0);

@@ -4,7 +4,8 @@ using namespace std;
 
 /* 
   Time: O(n)
-  Space: O(log n) - recursion stack
+  Space: O(n) - recursion stack
+              - Tree could be not balances. Worst case: n
 */
 bool bst(node *head, node* mini, node* maxi) {
   if(head == NULL) return true;
