@@ -52,29 +52,22 @@ int firstCommonAncestor1(node *p, node *q) {
 }
 
 /* 
-  Solution with no extra pointers
+  Solution with no extra pointers, but if pointer to root
 
   Time: O(n)
   Space: O(log n) - recursion stack
 */
 
-bool isSubtree(node *root, node *p) {
-  if(root == NULL || p == NULL) return false;
-  if(root == p) return true;
+node *firstCommonAncestor2(node *root, node *p, node *q) {
+  if(p == NULL || q == NULL || root == NULL) return NULL; // error
 
-  return isSubtree(root->left,p) || isSubtree(root->right,p);
-}
-int firstCommonAncestor2(node *root, node *p, node *q) {
-  if(p == NULL || q == NULL || root == NULL) return -1; // error
-  if(p == q) return p->elem;
+  if(root == p || root == q) return root;
 
-  bool isPLeft = isSubtree(root->left,p);
-  bool isQLeft = isSubtree(root->left,q);
+  node *lcaLeft = firstCommonAncestor2(root->left, p, q);
+  node *lcaRight = firstCommonAncestor2(root->right, p, q);
 
-  if(isPLeft != isQLeft) return root->elem;
-
-  if(isPLeft) return firstCommonAncestor2(root->left,p,q);
-  else return firstCommonAncestor2(root->right,p,q);
+  if(lcaLeft && lcaRight) return root;
+  return (lcaLeft) ? lcaLeft : lcaRight;
 }
 
 int main() {
@@ -107,6 +100,6 @@ int main() {
   rr->right = new node(15,rr);
 
   cout << "LCA (" << ll->left->elem << "," << l->elem << "): " << firstCommonAncestor1(ll->left,l) << endl;
-  cout << "LCA (" << ll->left->elem << "," << l->elem << "): " << firstCommonAncestor2(head,ll->left,l) << endl;
+  cout << "LCA (" << ll->left->elem << "," << l->elem << "): " << firstCommonAncestor2(head,ll->left,l)->elem << endl;
   return 0;
 }
