@@ -8,6 +8,8 @@ using namespace std;
   Topological Sort - Visit each node using DFS. After visit a vertex, add it in the vector
 
   1. It's not equal to the classic DFS, because the edge (u,v) implies that v deppends of u
+        - During the implementation, I do a inversion: the pair (u,v) becomes the edge u <- v
+        - Instead of the inversion, I could do pair (u,v) becomes edge u -> v and use a Stack
   2. Instead of using a stack, use a vector for the same reason
 
 */
