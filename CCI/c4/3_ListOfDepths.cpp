@@ -17,9 +17,7 @@ class linkedListNode {
 void createList(node *head, vector<linkedListNode *> &v, int depth) {
   if(head == NULL) return;
 
-  if(v.size() < depth) {
-    v.push_back(new linkedListNode(head->elem));
-  }
+  if(v.size() < depth) v.push_back(new linkedListNode(head->elem));
   else {
     linkedListNode *p = v[depth-1];
     while(p->next != NULL)
