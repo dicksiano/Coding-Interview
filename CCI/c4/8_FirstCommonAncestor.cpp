@@ -56,7 +56,7 @@ int firstCommonAncestor1(node *p, node *q) {
 
   Time: O(n)
   Space: O(n) - recursion stack
-              - Tree could be not balances. Worst case: n
+              - Tree could be not balanced. Worst case: n
 
               Worst case:
                           root

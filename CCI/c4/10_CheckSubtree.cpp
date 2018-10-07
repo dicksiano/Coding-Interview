@@ -4,7 +4,8 @@ using namespace std;
 
 /*
   Time: O(n + km)
-  Spae: O(log n) - recursion stack
+  Spae: O(n) - recursion stack
+             - Tree could be not balanced. Worst case: n
 */
 bool check(node *x, node *y) {
   if(x == NULL && y == NULL) return true;
