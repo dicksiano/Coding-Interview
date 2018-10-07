@@ -3,8 +3,9 @@
 using namespace std;
 
 /* 
-  Time: O(n)
+  Time:  O(n)
   Space: O(n) - recursion stack in a not balanced tree
+              - hash map
 */
 int paths(node *root, int x, map<int,int> &hashMap, int currentSum) {
   if(root == NULL) return 0;
