@@ -23,6 +23,11 @@ private:
   vector<int> v;
 };
 
+
+/*
+  Time:  O(log n)
+  Space: O(log n) - Recursion stack
+*/
 int binSearch(Listy l, int x, int s, int e) {
   if(s == e) {
     if(l.elementAt(s) != x)
@@ -34,14 +39,14 @@ int binSearch(Listy l, int x, int s, int e) {
   if(l.elementAt(mid) == -1)
     return binSearch(l, x, s, mid-1);
 
-  if(x == l.elementAt(mid)) 
-    return mid;
-  else if(x < l.elementAt(mid)) 
-    return binSearch(l, x, s, mid-1);
-  else
-    return binSearch(l, x, mid+1, e);
+  if(x == l.elementAt(mid)) return mid;
+  else if(x < l.elementAt(mid)) return binSearch(l, x, s, mid-1);
+  else return binSearch(l, x, mid+1, e);
 }
 
+/*
+  O(log n)
+*/
 int search(Listy l, int x) {
   int i = 1;
   while(l.elementAt(i) != -1 && l.elementAt(i) < x)
