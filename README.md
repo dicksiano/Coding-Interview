@@ -1,12 +1,14 @@
 # Coding-Interview
 
+Someday I'll write a nice introduction text. Someday.
+
 ## C++ tricks
 * Vector
 ``` cpp
 vector<int> v;
 v.push_back(value);
-v.insert(v.begin() + delta);
-v.erase(v.begin() + i, v.begin() + j);
+v.insert(v.begin() + i, value); // insert(v.begin()+2,4): {1, 5, 10, 15} => {1, 5, 4, 10, 15} 
+v.erase(v.begin()+i, v.begin()+j); // erase(v.begin()+3,v.begin()+5): {0, 1, 2, 3, 4, 5, 6} => {0, 1, 2, 5, 6}
   ```
 * Sorting
 ``` cpp
@@ -16,13 +18,13 @@ sort(v.begin(), v.end()); // Sort the whole array
 ``` cpp
 unordered_map<string, int> ht;
 ht["key"] = value;
-ht.find("key") == ht.end();
+if (ht.find("key") == ht.end()) { /* ... */ }
   ```
 * Unordered set
 ``` cpp
 unordered_set<int> hs;
 hs.insert(value);
-hs.find(value) == hs.end();
+if (hs.find(value) == hs.end()) { /* ... */ }
   ```
 * Pair
 ``` cpp
@@ -44,3 +46,12 @@ s.push(value)
 int x = s.top();
 s.pop();
  ```
+ 
+ * Priority Queue - Max Heap
+ ``` cpp
+ pritority_queue<int> heap;
+ heap.push(value);
+ int x = heap.top(); // Max element
+ heap.pop();
+ ```
+ 
