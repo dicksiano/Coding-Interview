@@ -33,6 +33,12 @@ unordered_set<int> hs;
 hs.insert(value);
 if (hs.find(value) == hs.end()) { /* ... */ }
   ```
+ 
+* Initialization from Vector
+ ``` cpp
+unordered_set<int>(v.begin(), v.end());
+ ```
+ 
 * Pair
 ``` cpp
 pair<int, int> p;
