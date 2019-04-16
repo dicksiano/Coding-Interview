@@ -14,6 +14,13 @@ v.erase(v.begin()+i, v.begin()+j); // erase(v.begin()+3,v.begin()+5): {0, 1, 2, 
 ``` cpp
 sort(v.begin(), v.end()); // Sort the whole array
   ```
+  
+* Substring
+``` cpp
+s.substr(i, size);      // begin, size
+s.substr(i, j - i + 1); // begin, end
+  ```
+  
 * Unordered map
 ``` cpp
 unordered_map<string, int> ht;
