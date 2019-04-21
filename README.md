@@ -13,6 +13,15 @@ v.erase(v.begin()+i, v.begin()+j); // erase(v.begin()+3,v.begin()+5): {0, 1, 2, 
 * Sorting
 ``` cpp
 sort(v.begin(), v.end()); // Sort the whole array
+
+struct Comparator {
+  Comparator(int r, int c) : x(r), y(c) {}
+  bool operator ()(const vector<int> &a, const vector<int> &b) {
+	  return (abs(a[0]-x) + abs(a[1]-y)) < (abs(b[0]-x) + abs(b[1]-y));
+  }
+  int x, y;
+};
+sort(res.begin(), res.end(), Comparator(r,c));
   ```
   
 * Substring
