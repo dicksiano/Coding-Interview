@@ -35,6 +35,11 @@ s.substr(i, j - i + 1); // begin, end
 unordered_map<string, int> ht;
 ht["key"] = value;
 if (ht.find("key") == ht.end()) { /* ... */ }
+
+ unordered_map<string, int> ht({
+				  { "a", 1 },
+				  { "b", 2 }
+  	  	  	       });
   ```
 * Unordered set
 ``` cpp
