@@ -22,6 +22,12 @@ struct Comparator {
   int x, y;
 };
 sort(res.begin(), res.end(), Comparator(r,c));
+
+/* C++11 Lambda*/
+sort( v.begin( ), v.end( ), []( const MyStruct& a, const MyStruct& b )
+				{
+   					return a.key < b.key;
+				});
   ```
   
 * Substring
