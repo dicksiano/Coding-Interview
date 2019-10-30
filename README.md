@@ -80,16 +80,18 @@ int x = s.top();
 s.pop();
  ```
  
- * Priority Queue - Max Heap
+ * Priority Queue 
  ``` cpp
- pritority_queue<int> heap;
+ pritority_queue<int> heap; /* Max Heap */
  heap.push(value);
  int x = heap.top(); // Max element
  heap.pop();
- ```
+
+ priority_queue <Type, vector<Type>, ComparisonType > pq;
+ priority_queue <int, vector<int>, greater<int> > min_heap; /* Min Heap */
  
-  * Priority Queue - Min Heap
- ``` cpp
- priority_queue <Type, vector<Type>, ComparisonType > min_heap;
- priority_queue <int, vector<int>, greater<int> > pq;
+ /* C++11 Lambda*/
+ auto cmp = [](int a, int b) { return (a ^ 1) < (b ^ 1); };
+ priority_queue<int, std::vector<int>, decltype(cmp)> pq(cmp); /* decltype evaluates the type of a expression */
+  
  ```
