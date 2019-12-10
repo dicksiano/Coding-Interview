@@ -52,10 +52,8 @@ if (ht.find("key") == ht.end()) { /* ... */ }
 unordered_set<int> hs;
 hs.insert(value);
 if (hs.find(value) == hs.end()) { /* ... */ }
-  ```
  
-* Initialization from Vector
- ``` cpp
+/* Initialization from Vector */
 unordered_set<int>(v.begin(), v.end());
  ```
  
