@@ -35,7 +35,18 @@ sort( v.begin( ), v.end( ), []( const MyStruct& a, const MyStruct& b )
 s.substr(i, size);      // begin, size
 s.substr(i, j - i + 1); // begin, end
   ```
-  
+* Split string by delimiter
+``` cpp
+vector<string> split(const string& s, char delimiter) {
+   vector<string> tokens;
+   string token;
+   istringstream ss(s);
+   
+   while (getline(ss, token, delimiter)) tokens.push_back(token);
+   return tokens;
+}
+  ```
+
 * Unordered map
 ``` cpp
 unordered_map<string, int> ht;
