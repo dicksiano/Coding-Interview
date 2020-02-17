@@ -100,7 +100,7 @@ s.pop();
  priority_queue <int, vector<int>, greater<int> > min_heap; /* Min Heap */
  
  /* C++11 Lambda*/
- auto cmp = [](int a, int b) { return (a ^ 1) < (b ^ 1); };
- priority_queue<int, std::vector<int>, decltype(cmp)> pq(cmp); /* decltype evaluates the type of a expression */
+ auto f = [](int a, int b) { return (a ^ 1) < (b ^ 1); };
+ priority_queue<int, vector<int>, decltype(f)> pq(f); /* decltype evaluates the type of a expression */
   
  ```
