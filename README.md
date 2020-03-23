@@ -53,7 +53,7 @@ unordered_map<string, int> ht;
 ht["key"] = value;
 if (ht.find("key") == ht.end()) { /* ... */ }
 
- unordered_map<string, int> ht({
+ unordered_map<string, int> ht({		/* overload constructor constructor with initializer_list */
 				  { "a", 1 },
 				  { "b", 2 }
   	  	  	       });
