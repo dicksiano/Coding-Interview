@@ -35,6 +35,21 @@ sort( v.begin( ), v.end( ), []( const MyStruct& a, const MyStruct& b )
 s.substr(i, size);      // begin, size
 s.substr(i, j - i + 1); // begin, end
   ```
+ 
+ 
+* Find substring
+``` cpp
+if( s.find(p) != string::npos ) // Check if p is part of s
+  ```
+  
+  
+* Replace substring
+``` cpp
+str.replace( start , size , str2);
+str.replace(3,7, "NEW"); // "abc_*OLD*_def" => "abcNEWdef"
+  ```
+   
+  
 * Split string by delimiter
 ``` cpp
 vector<string> split(const string& s, char delimiter) {
