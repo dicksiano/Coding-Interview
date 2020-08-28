@@ -62,6 +62,14 @@ vector<string> split(const string& s, char delimiter) {
 }
   ```
 
+* map
+``` cpp
+map<int, int> m;
+
+/* Binary search to find key */
+map<int, int>::iterator lb = m.lower_bound(x); /* O(log n ) */
+  ```
+  
 * Unordered map
 ``` cpp
 unordered_map<string, int> ht;
